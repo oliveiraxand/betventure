@@ -1,0 +1,15 @@
+{
+  "name": "bet-venture-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Alexandre Oliveira dos Santos",
+  "license": "ISC"
+}

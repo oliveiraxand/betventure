@@ -1,5 +1,5 @@
 const app = require('./server');
-const crypto = require ('crypto');
+const { authModel } = require('./src/models');
 const PORT = 3307
 
 app.get('/', (_req, res) => {
@@ -7,8 +7,7 @@ app.get('/', (_req, res) => {
 })
 
 app.get('/auth/token', (_req, res) => {
-  const token = crypto.randomBytes(8).toString('hex');
-  console.log(token.length)
+  const token = authModel.tokenGenerate();
   return res.status(201).json({ token, message: 'Token Gerado com sucesso' })
 })
 
