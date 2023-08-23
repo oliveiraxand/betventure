@@ -4,7 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "dev": "nodemon backend/app.js"
+    "dev": "nodemon backend/app.js",
+    "test:mocha": "npm run test:mocha --prefix backend"
   },
   "author": "Alexandre Oliveira dos Santos",
   "license": "ISC",
