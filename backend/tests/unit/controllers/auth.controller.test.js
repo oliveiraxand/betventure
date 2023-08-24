@@ -21,4 +21,7 @@ describe('Testes do AuthController', function () {
       authController.generateToken(req, res);
       expect(res.status.calledWith(201)).to.equal(true)
   });
+  afterEach(function () {
+    sinon.restore();
+  });
 });

@@ -14,4 +14,7 @@ describe('Testes do AuthService', function () {
       expect(serviceResponse.data).to.equal(tokenFromModel);
       expect(serviceResponse.status).to.equal('CREATED');
   });
+  afterEach(function () {
+    sinon.restore();
+  });
 });
