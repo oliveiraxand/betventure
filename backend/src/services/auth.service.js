@@ -1,10 +1,10 @@
 const { authModel } = require('../models/');
 
-const tokenGenerate = () => {
-  const token = authModel.tokenGenerate();
+const generateToken = () => {
+  const token = authModel.generateToken();
   return { status: 'CREATED', data: token }
 };
 
 module.exports = {
-  tokenGenerate,
+  generateToken,
 };
