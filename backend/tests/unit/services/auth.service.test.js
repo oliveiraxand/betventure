@@ -1,5 +1,5 @@
-const { expect } = require('chai');
-const sinon = require('sinon');
+  const { expect } = require('chai');
+  const sinon = require('sinon');
 
 const { authService } = require('../../../src/services');
 const { authModel } = require('../../../src/models');
