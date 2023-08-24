@@ -1,5 +1,6 @@
 const app = require('./server');
 const { authModel } = require('./src/models');
+const { authService } = require('./src/services');
 const PORT = 3307
 
 app.get('/', (_req, res) => {
@@ -7,8 +8,8 @@ app.get('/', (_req, res) => {
 })
 
 app.get('/auth/token', (_req, res) => {
-  const token = authModel.tokenGenerate();
-  return res.status(201).json({ token, message: 'Token Gerado com sucesso' })
+  const serviceResponse = authService.tokenGenerate();
+  return res.status(201).json({ token: serviceResponse.data })
 })
 
 app.listen(PORT, () => {
