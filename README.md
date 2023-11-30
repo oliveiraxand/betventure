@@ -22,7 +22,7 @@ Em breve....
 
 ## Tecnologias Utilizadas
 
-Node.js, EXPRESS, MOCHA, SINON e CHAI
+TypeScript, Sequelize, Node.js, EXPRESS, MOCHA, SINON e CHAI
 
 ## Contribuição
 
