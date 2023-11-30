@@ -47,7 +47,7 @@ export default {
       },
       status: {
         allowNull: false,
-        type: DataTypes.INTEGER
+        type: DataTypes.STRING
       }
     })
   },
