@@ -1,6 +1,6 @@
 const app = require('./server');
-const { sportService } = require('./src/services');
-const { authRoutes } = require('./src/routes');
+const { sportService } = require('./services');
+const { authRoutes } = require('./routes');
 const PORT = 3307
 
 app.get('/', (_req, res) => {
