@@ -1,5 +1,5 @@
 import { Model, QueryInterface, DataTypes } from 'sequelize';
-import { Event } from '../../src/types/Event';
+import { Event } from '../../types/Event';
 
 export default {
   up(queryInterface: QueryInterface){

@@ -1,5 +1,5 @@
 import { Model, QueryInterface, DataTypes } from 'sequelize';
-import { Sport } from '../../src/types/Sport';
+import { Sport } from '../../types/Sport';
 
 export default {
     up(queryInterface: QueryInterface) {

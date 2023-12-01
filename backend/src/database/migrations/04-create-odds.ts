@@ -1,5 +1,5 @@
 import { Model, QueryInterface, DataTypes } from 'sequelize';
-import { Odds } from '../../src/types/Odds';
+import { Odds } from "../../types/Odds";
 
 export default {
   up(queryInterface: QueryInterface){

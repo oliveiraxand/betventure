@@ -21,7 +21,7 @@ export default {
 		},
 		balance: {
 			allowNull: false,
-			type: DataTypes.NUMBER,
+			type: DataTypes.INTEGER,
 		}
 	})
   },

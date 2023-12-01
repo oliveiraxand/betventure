@@ -1,14 +1,14 @@
-import { Model, QueryInterface, DataTypes } from "sequelize";
+import { Model, QueryInterface, DataTypes } from 'sequelize';
 
-import { Bet } from '../../src/types/Bet';
+import { TransactionHistory } from '../../types/TransactionHistory';
 
 export default {
   up(queryInterface: QueryInterface) {
-    return queryInterface.createTable<Model<Bet>>('bets', {
+    return queryInterface.createTable<Model<TransactionHistory>>('transaction_histories', {
       id: {
         allowNull: false,
-        autoIncrement: true,
         primaryKey: true,
+        autoIncrement: true,
         type: DataTypes.INTEGER
       },
       userId: {
@@ -22,36 +22,21 @@ export default {
           key: 'id',
         },
       },
-      eventId: {
-        allowNull: false,
-        type: DataTypes.INTEGER,
-        field: 'event_id',
-        onUpdate: 'CASCADE',
-        onDelete: 'CASCADE',
-        references: {
-          model: 'events',
-          key: 'id',
-        },
-      },
-      selection: {
+      type: {
         allowNull: false,
         type: DataTypes.STRING,
       },
-      stake: {
-        allowNull: false,
-        type: DataTypes.STRING,
-      },
-      odds: {
+      amount: {
         allowNull: false,
         type: DataTypes.INTEGER,
       },
-      status: {
+      timestamp: {
         allowNull: false,
         type: DataTypes.STRING
       }
     })
   },
   down(queryInterface: QueryInterface) {
-    return queryInterface.dropTable('bets')
-  },
+    return queryInterface.dropTable('transaction_histories');
+  }
 }
