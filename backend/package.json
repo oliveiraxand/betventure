@@ -1,6 +1,7 @@
 {
   "scripts": {
     "migrate": "npx tsc && npx sequelize-cli db:migrate",
+    "seed": "npx tsc && npx sequelize-cli db:seed:all",
     "test:mocha": "npm run test:mocha --prefix backend"
   },
   "dependencies": {
