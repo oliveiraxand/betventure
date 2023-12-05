@@ -28,3 +28,4 @@ exports.default = {
         return queryInterface.dropTable('users');
     }
 };
+//# sourceMappingURL=01-create-user.js.map

@@ -26,3 +26,4 @@ SportModel.init({
     timestamps: false,
 });
 exports.default = SportModel;
+//# sourceMappingURL=SportModel.js.map

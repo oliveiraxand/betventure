@@ -39,3 +39,4 @@ exports.default = {
         return queryInterface.dropTable('transaction_histories');
     }
 };
+//# sourceMappingURL=06-create-transactionhistory.js.map

@@ -35,3 +35,4 @@ exports.default = {
         return queryInterface.dropTable('events');
     }
 };
+//# sourceMappingURL=03-create-event.js.map

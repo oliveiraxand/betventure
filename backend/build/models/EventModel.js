@@ -36,3 +36,4 @@ EventModel.init({
 });
 EventModel.belongsTo(SportModel_1.default, { foreignKey: 'sportId' });
 exports.default = EventModel;
+//# sourceMappingURL=EventModel.js.map

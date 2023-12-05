@@ -51,3 +51,4 @@ BetModel.init({
 BetModel.belongsTo(EventModel_1.default, { foreignKey: 'eventId' });
 BetModel.belongsTo(UserModel_1.default, { foreignKey: 'userId' });
 exports.default = BetModel;
+//# sourceMappingURL=BetModel.js.map

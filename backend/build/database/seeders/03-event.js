@@ -36,3 +36,4 @@ exports.default = {
         yield queryInterface.bulkDelete('events', {});
     })
 };
+//# sourceMappingURL=03-event.js.map

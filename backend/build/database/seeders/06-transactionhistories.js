@@ -39,3 +39,4 @@ exports.default = {
         yield queryInterface.bulkDelete('transaction_histories', {});
     })
 };
+//# sourceMappingURL=06-transactionhistories.js.map

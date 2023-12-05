@@ -10,8 +10,13 @@
   "author": "Alexandre Oliveira dos Santos",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.18.2",
-    "sequelize": "^6.35.1"
+    "express": "4.17.1",
+    "express-async-errors": "3.1.1",
+    "jsonwebtoken": "9.0.0",
+    "mysql2": "2.3.0",
+    "nodemon": "2.0.14",
+    "sequelize": "6.25.5",
+    "typescript": "^5.3.2"
   },
   "devDependencies": {
     "nodemon": "^3.0.1"

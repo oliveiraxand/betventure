@@ -37,3 +37,4 @@ OddsModel.init({
 });
 OddsModel.belongsTo(EventModel_1.default, { foreignKey: 'eventId' });
 exports.default = OddsModel;
+//# sourceMappingURL=OddsModel.js.map

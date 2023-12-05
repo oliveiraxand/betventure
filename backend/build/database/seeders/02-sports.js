@@ -30,3 +30,4 @@ exports.default = {
         yield queryInterface.bulkDelete('sports', {});
     })
 };
+//# sourceMappingURL=02-sports.js.map

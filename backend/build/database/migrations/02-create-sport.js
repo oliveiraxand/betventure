@@ -20,3 +20,4 @@ exports.default = {
         return queryInterface.dropTable('sports');
     }
 };
+//# sourceMappingURL=02-create-sport.js.map

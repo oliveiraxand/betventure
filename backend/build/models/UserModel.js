@@ -34,3 +34,4 @@ UserModel.init({
     timestamps: false,
 });
 exports.default = UserModel;
+//# sourceMappingURL=UserModel.js.map

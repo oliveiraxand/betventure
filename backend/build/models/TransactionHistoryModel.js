@@ -40,3 +40,4 @@ TransactionHistoryModel.init({
 });
 TransactionHistoryModel.belongsTo(UserModel_1.default, { foreignKey: 'userId' });
 exports.default = TransactionHistoryModel;
+//# sourceMappingURL=TransactionHistoryModel.js.map

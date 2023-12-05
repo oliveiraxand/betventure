@@ -34,3 +34,4 @@ exports.default = {
         return queryInterface.dropTable('odds');
     }
 };
+//# sourceMappingURL=04-create-odds.js.map

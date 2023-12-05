@@ -45,3 +45,4 @@ exports.default = {
         yield queryInterface.bulkDelete('bets', {});
     })
 };
+//# sourceMappingURL=05-bets.js.map

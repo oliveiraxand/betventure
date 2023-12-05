@@ -36,3 +36,4 @@ exports.default = {
         yield queryInterface.bulkDelete('odds', {});
     })
 };
+//# sourceMappingURL=04-odds.js.map

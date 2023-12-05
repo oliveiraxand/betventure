@@ -36,3 +36,4 @@ exports.default = {
         yield queryInterface.bulkDelete('users', {});
     })
 };
+//# sourceMappingURL=01-users.js.map

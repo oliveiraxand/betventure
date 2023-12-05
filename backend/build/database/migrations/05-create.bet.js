@@ -54,3 +54,4 @@ exports.default = {
         return queryInterface.dropTable('bets');
     },
 };
+//# sourceMappingURL=05-create.bet.js.map
