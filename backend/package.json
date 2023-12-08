@@ -11,6 +11,8 @@
     "testEnvironment": "node"
   },
   "dependencies": {
+    "@types/express": "^4.17.21",
+    "@types/jsonwebtoken": "^9.0.5",
     "sequelize": "^6.35.1",
     "typescript": "^5.3.2"
   },

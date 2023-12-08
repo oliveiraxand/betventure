@@ -5,6 +5,10 @@ class UserService {
   public async getAllUser(): Promise<UserModel[]> {
     const users = await this.model.findAll();
     return users;
+  };
+
+  public async findById(id: string): Promise<UserModel | null> {
+    return await this.model.findByPk(id);
   }
 }
 
