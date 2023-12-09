@@ -41,7 +41,7 @@ class EventController {
   public async deleteEvent(req: Request, res: Response) {
     const { id } = req.params;
     const serviceResponse = await this._service.deleteEvent(id);
-    return res.status(serviceResponse.status).json(serviceResponse.data);
+    return res.status(serviceResponse.status)
   }
 }
 

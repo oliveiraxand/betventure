@@ -23,7 +23,7 @@ class EventService {
 
   public async deleteEvent(id: string) {
     await this.model.destroy({ where: { id: Number( id) }})
-    return { status: 204, data: { message:  'Removido com sucesso' }}
+    return { status: 204 }
   }
 }
 
