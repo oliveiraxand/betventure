@@ -2,7 +2,7 @@ import { sign } from "jsonwebtoken"
 import { TokenGenerationResult } from "../interfaces/AuthInterface";
 
 class AuthService {
-  private secret;
+  public secret;
   private expireIn;
   constructor() {
     this.secret = 'SECRET';

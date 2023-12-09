@@ -9,7 +9,7 @@ class AuthController {
   public generateToken(req: Request, res: Response) {
     const { id, username } = req.body;
     const serviceResponse = this.model.generateToken(id, username);
-    return res.status(201).json(serviceResponse.token);
+    return res.status(201).json({ token: serviceResponse.token });
   }
 
 }
