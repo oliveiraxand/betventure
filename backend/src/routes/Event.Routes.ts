@@ -8,4 +8,10 @@ eventRouter.get("/get-all", eventController.getAllEvents);
 
 eventRouter.get("/:id", eventController.getById);
 
+eventRouter.post("/create", eventController.createEvent);
+
+eventRouter.put("/:id", eventController.updateEvent);
+
+eventRouter.delete("/:id", eventController.deleteEvent);
+
 export default eventRouter;
