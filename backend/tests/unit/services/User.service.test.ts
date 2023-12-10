@@ -1,5 +1,5 @@
 import UserModel from "../../../src/models/UserModel"; 
-import UserService from "../../../src/services/User.service";
+import UserService from "../../../src/services/User.Service";
 // import UserModel from '../models/UserModel';
 
 // Mock para o modelo de usuário

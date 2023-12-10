@@ -1,6 +1,6 @@
 import { NextFunction, Request, Response } from 'express';
 import { verify, VerifyErrors } from 'jsonwebtoken';
-import AuthService from '../services/Auth.service';
+import AuthService from '../services/Auth.Service';
 
 interface CustomRequest extends Request {
   user?: any

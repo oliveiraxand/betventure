@@ -1,4 +1,4 @@
-import AuthService from "../../../src/services/Auth.service";
+import AuthService from "../../../src/services/Auth.Service";
 
 describe('Auth Service', () => {
   let authService = new AuthService();
