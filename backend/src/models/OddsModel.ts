@@ -22,7 +22,7 @@ OddsModel.init({
   eventId: {
     type: DataTypes.INTEGER,
     allowNull: false,
-    primaryKey: true,
+    // primaryKey: true,
     autoIncrement: true,
   },
   home: {

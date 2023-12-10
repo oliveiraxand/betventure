@@ -26,7 +26,7 @@ class SportController {
   }
 
   public async createSport(req: Request, res: Response) {
-    const { name, date, sportId } = req.body;
+    const { name } = req.body;
     const serviceResponse = await this._service.postSport(name);
     return res.status(serviceResponse.status).json(serviceResponse.data);
   }
