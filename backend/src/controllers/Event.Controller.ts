@@ -12,6 +12,8 @@ class EventController {
     this.createEvent = this.createEvent.bind(this);
     this.updateEvent = this.updateEvent.bind(this);
     this.deleteEvent = this.deleteEvent.bind(this);
+    this.future = this.future.bind(this);
+    this.past = this.past.bind(this);
   }
 
   public async getAllEvents(_req: Request, res: Response) {
@@ -42,6 +44,20 @@ class EventController {
     const { id } = req.params;
     const serviceResponse = await this._service.deleteEvent(id);
     return res.status(serviceResponse.status)
+  }
+
+  public async past(req: Request, res: Response) {
+    const { date } = req.body;
+    console.log('serviceResponse')
+    const serviceResponse = await this._service.getEventByPeriod(date, false);
+    return res.status(serviceResponse.status).json(serviceResponse.data);
+  }
+
+  public async future(req: Request, res: Response) {
+    const { date } = req.body;
+    console.log('serviceResponse')
+    const serviceResponse = await this._service.getEventByPeriod(date, true);
+    return res.status(serviceResponse.status).json(serviceResponse.data);
   }
 }
 

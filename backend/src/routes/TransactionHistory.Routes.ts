@@ -1,4 +1,4 @@
-import express, { Request, Response } from 'express';
+import express from 'express';
 import TransactionHistoryController from '../controllers/TransactionHistory.Controller';
 
 const transactionHistoryRouter = express.Router();

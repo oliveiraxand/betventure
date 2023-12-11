@@ -1,10 +1,10 @@
-import express, { Request, Response } from 'express';
+import express from 'express';
 import UserController from '../controllers/User.Controller';
-
+import { authenticateToken } from '../middlewares/AuthMiddleware';
 const userRouter = express.Router();
 const userController = new UserController();
 
-userRouter.get("/get-all", userController.getAllUsers);
+userRouter.get("/get-all", authenticateToken, userController.getAllUsers);
 
 userRouter.get("/:id", userController.getById);
 

@@ -6,9 +6,13 @@ const eventController = new EventController();
 
 eventRouter.get("/get-all", eventController.getAllEvents);
 
-eventRouter.get("/:id", eventController.getById);
+eventRouter.get("/past", eventController.past);
 
 eventRouter.post("/create", eventController.createEvent);
+
+eventRouter.get("/future", eventController.future);
+
+eventRouter.get("/:id", eventController.getById);
 
 eventRouter.put("/:id", eventController.updateEvent);
 

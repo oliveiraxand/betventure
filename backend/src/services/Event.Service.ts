@@ -1,3 +1,4 @@
+import { Op } from "sequelize";
 import EventModel from "../models/EventModel";
 
 class EventService {
@@ -24,6 +25,21 @@ class EventService {
   public async deleteEvent(id: string) {
     await this.model.destroy({ where: { id: Number( id) }})
     return { status: 204 }
+  }
+
+  public async getEventByPeriod(date: string, isAfter: boolean) {
+    try {
+      let events;
+      if(isAfter) {
+        events = await this.model.findAll({ where: { date: { [Op.gte]: date } }});
+      } else {
+        events = await this.model.findAll({ where: { date: { [Op.lte]: date } }});
+      }
+      console.log(events);
+      return { status: 222, data: { events }}
+    } catch(error) {
+        return { status: 500, data: { error }}
+    }
   }
 }
 
