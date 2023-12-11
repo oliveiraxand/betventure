@@ -7,6 +7,7 @@ import {
 } from 'sequelize';
 import db from '.';
 import SportModel from './SportModel';
+import OddsModel from './OddsModel';
 // import OtherModel from './OtherModel';
 
 class EventModel extends Model<InferAttributes<EventModel>,
@@ -44,5 +45,6 @@ EventModel.init({
 });
 
 EventModel.belongsTo(SportModel, { foreignKey: 'sportId' });
-
+EventModel.hasMany(OddsModel, { foreignKey: 'eventId', as: 'Probabilidades' });
+  
 export default EventModel;

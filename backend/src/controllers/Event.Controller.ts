@@ -48,14 +48,12 @@ class EventController {
 
   public async past(req: Request, res: Response) {
     const { date } = req.body;
-    console.log('serviceResponse')
     const serviceResponse = await this._service.getEventByPeriod(date, false);
     return res.status(serviceResponse.status).json(serviceResponse.data);
   }
 
   public async future(req: Request, res: Response) {
     const { date } = req.body;
-    console.log('serviceResponse')
     const serviceResponse = await this._service.getEventByPeriod(date, true);
     return res.status(serviceResponse.status).json(serviceResponse.data);
   }

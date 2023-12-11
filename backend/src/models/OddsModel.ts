@@ -43,6 +43,6 @@ OddsModel.init({
   timestamps: false,
 });
 
-OddsModel.belongsTo(EventModel, { foreignKey: 'eventId' });
+// OddsModel.belongsTo(EventModel, { foreignKey: 'eventId', as: 'Probabilidades' });
 
 export default OddsModel;
