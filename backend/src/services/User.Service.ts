@@ -18,7 +18,7 @@ class UserService {
 
   public async updateUser(id: string, username:string, password: string, balance: string) {
     await this.model.update({ username, password, balance: Number(balance) }, { where: { id: Number(id) } })
-    return { status: 200, data: { message:  'Atualizado com sucesso', data: { id, name } }}
+    return { status: 200, data: { message:  'Atualizado com sucesso', data: { id, username, password, balance } }}
   }
 
   public async deleteUser(id: string) {

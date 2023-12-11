@@ -11,15 +11,15 @@ export default {
       },
       {
         id: 2, 
-        username: 'oliveiraxand',
-        password: 'qwerty',
-        balance: 0,
+        username: 'rogerincambalhota',
+        password: 'senha-betventure',
+        balance: 300,
       },
       {
         id: 3, 
-        username: 'oliveiraxand',
-        password: 'qwerty',
-        balance: 0,
+        username: 'douglasviegas',
+        password: 'nuncamexa',
+        balance: 499,
       },
     ])
   },

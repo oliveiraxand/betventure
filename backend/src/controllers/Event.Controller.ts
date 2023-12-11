@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import EventService from "../services/Event.service";
+import EventService from "../services/Event.Service";
 
 class EventController {
   private _service: EventService;

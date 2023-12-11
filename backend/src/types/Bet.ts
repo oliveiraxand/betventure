@@ -4,6 +4,5 @@ export type Bet = {
   eventId: number,
   selection: string,
   stake: number,
-  odds: number,
   status: string
 }

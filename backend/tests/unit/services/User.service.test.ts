@@ -31,7 +31,7 @@ describe('UserService', () => {
       (UserModel.findAll as jest.Mock).mockResolvedValue(mockUsers);
 
       // Act
-      const result = await userService.getAllUser();
+      const result = await userService.getAllUsers();
 
       // Assert
       expect(result).toEqual(mockUsers);
@@ -48,7 +48,7 @@ describe('UserService', () => {
       // Mock
       (UserModel.findByPk as jest.Mock).mockResolvedValue(mockUser);
       // Act
-      const result = await userService.findById(id.toString());
+      const result = await userService.getById(id.toString());
       // Assert
       expect(result).toEqual(mockUser);
       expect(UserModel.findByPk).toHaveBeenCalledTimes(1);

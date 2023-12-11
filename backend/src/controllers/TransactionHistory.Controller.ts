@@ -16,13 +16,13 @@ export default class TransactionHistoryController {
 
   public async getAllTransactionHistorys(_req: Request, res: Response) {
     const serviceResponse = await this._service.getAllTransactionHistory();
-    return res.status(200).json({ sports: serviceResponse });
+    return res.status(200).json({ transactions: serviceResponse });
   }
 
   public async getById(req: Request, res: Response) {
     const { id } = req.params;
     const serviceResponse = await this._service.getById(id);
-    return res.status(200).json({ sport: serviceResponse });
+    return res.status(200).json({ transaction: serviceResponse });
   }
 
   public async createTransactionHistory(req: Request, res: Response) {

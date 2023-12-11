@@ -18,15 +18,15 @@ export default {
       },
       home: {
         allowNull: false,
-        type: DataTypes.INTEGER,
+        type: DataTypes.FLOAT,
       },
       away: {
         allowNull: false,
-        type: DataTypes.INTEGER,
+        type: DataTypes.FLOAT,
       },
       draw: {
         allowNull: false,
-        type: DataTypes.INTEGER,
+        type: DataTypes.FLOAT,
       }
     })
 

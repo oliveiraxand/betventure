@@ -6,12 +6,12 @@ const oddsController = new OddsController();
 
 oddsRouter.get("/get-all", oddsController.getAllOdds);
 
-oddsRouter.get("/:id", oddsController.getById);
+oddsRouter.get("/:eventId", oddsController.getById);
 
 oddsRouter.post("/create", oddsController.createOdds);
 
-oddsRouter.put("/:id", oddsController.updateOdds);
+oddsRouter.put("/:eventId", oddsController.updateOdds);
 
-oddsRouter.delete("/:id", oddsController.deleteOdds);
+oddsRouter.delete("/:eventId", oddsController.deleteOdds);
 
 export default oddsRouter;

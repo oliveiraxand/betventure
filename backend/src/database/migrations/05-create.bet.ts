@@ -39,11 +39,7 @@ export default {
       },
       stake: {
         allowNull: false,
-        type: DataTypes.STRING,
-      },
-      odds: {
-        allowNull: false,
-        type: DataTypes.INTEGER,
+        type: DataTypes.FLOAT,
       },
       status: {
         allowNull: false,

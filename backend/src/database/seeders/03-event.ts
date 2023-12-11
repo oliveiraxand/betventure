@@ -6,20 +6,20 @@ export default {
       {
         id: 1, 
         sport_id: 1,
-        name: 'oliveiraxand',
-        date: '22/11/1999'
+        name: 'Cleveland vs Garden',
+        date: '22/07/2016'
       },
       {
         id: 2, 
-        sport_id: 1,
-        name: 'oliveiraxand',
-        date: '22/11/1999'
+        sport_id: 2,
+        name: 'Barcelona vs Real Madrid',
+        date: '15/08/2020'
       },
       {
         id: 3, 
-        sport_id: 1,
-        name: 'oliveiraxand',
-        date: '22/11/1999'
+        sport_id: 3,
+        name: 'Brasil vs EUA',
+        date: '20/06/2022'
       },
     ])
   },

@@ -5,15 +5,15 @@ export default {
     await queryInterface.bulkInsert('sports', [
       {
         id: 1, 
-        name: 'oliveiraxand',
+        name: 'Basketball',
       },
       {
         id: 2, 
-        name: 'oliveiraxand',
+        name: 'Futebol',
       },
       {
         id: 3, 
-        name: 'oliveiraxand',
+        name: 'Volei',
       },
     ])
   },

@@ -23,8 +23,7 @@ export default class BetService {
       userId: Number(user_id), 
       eventId: Number(event_id),
       selection,
-      stake,
-      odds: Number(odds), 
+      stake: Number(stake),
       status 
     });
     return { status: 201, data: { message:  'Criado com sucesso', data: insert.dataValues }}
@@ -42,8 +41,7 @@ export default class BetService {
     await this.model.update({ userId: Number(user_id), 
       eventId: Number(event_id),
       selection,
-      stake,
-      odds: Number(odds), 
+      stake: Number(stake),
       status }, { where: { id: Number(id) } })
     return { status: 200, data: { message:  'Atualizado com sucesso', data: {
       userId: Number(user_id), 

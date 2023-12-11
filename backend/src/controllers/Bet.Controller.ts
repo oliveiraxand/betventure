@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import BetService from "../services/Bet.service";
+import BetService from "../services/Bet.Service";
 
 export default class BetController {
   private _service: BetService;

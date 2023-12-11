@@ -17,8 +17,7 @@ InferCreationAttributes<BetModel>> {
   declare userId: CreationOptional<number>;
   declare eventId: CreationOptional<number>;
   declare selection: CreationOptional<string>;
-  declare stake: CreationOptional<string>;
-  declare odds: CreationOptional<number>;
+  declare stake: CreationOptional<number>;
   declare status: CreationOptional<string>;
 }
 
@@ -46,13 +45,9 @@ BetModel.init({
     allowNull: false,
   },
   stake: {
-    type: DataTypes.STRING,
+    type: DataTypes.FLOAT,
     allowNull: false,
   },
-  odds: {
-    type: DataTypes.INTEGER,
-    allowNull: false,
-  }
 }, {
   sequelize: db,
   underscored: true,

@@ -22,19 +22,19 @@ OddsModel.init({
   eventId: {
     type: DataTypes.INTEGER,
     allowNull: false,
-    // primaryKey: true,
-    autoIncrement: true,
+    primaryKey: true,
+    // autoIncrement: true,
   },
   home: {
-    type: DataTypes.INTEGER,
+    type: DataTypes.FLOAT,
     allowNull: false,
   },
   away: {
-    type: DataTypes.INTEGER,
+    type: DataTypes.FLOAT,
     allowNull: false,
   },
   draw: {
-    type: DataTypes.INTEGER,
+    type: DataTypes.FLOAT,
     allowNull: false,
   }}, {
   sequelize: db,
