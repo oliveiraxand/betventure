@@ -12,6 +12,7 @@ class UserController {
     this.createUser = this.createUser.bind(this);
     this.updateUser = this.updateUser.bind(this);
     this.deleteUser = this.deleteUser.bind(this);
+    this.login = this.login.bind(this);
   }
 
   public async getAllUsers(_req: Request, res: Response) {
@@ -42,6 +43,12 @@ class UserController {
     const { id } = req.params;
     const serviceResponse = await this._service.deleteUser(id);
     return res.status(serviceResponse.status)
+  }
+
+  public async login(req: Request, res: Response) {
+    const { username, password } = req.body;
+    const serviceResponse = await this._service.login(username, password);
+    return res.status(serviceResponse.status).json(serviceResponse.data);
   }
 }
 
