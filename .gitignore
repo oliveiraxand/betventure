@@ -1,3 +1,5 @@
 node_modules/
 database.json
+backend/build
+/home/alexandre/Workspace/betventure/backend/build
 requisitos.md
