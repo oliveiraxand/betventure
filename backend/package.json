@@ -5,7 +5,7 @@
     "seed": "npx tsc && npx sequelize-cli db:seed:all",
     "test:mocha": "npm run test:mocha --prefix backend",
     "test:jest": "jest /home/alexandre/Workspace/betventure/backend/tests",
-    "start": "ts-node-dev /home/alexandre/Workspace/betventure/backend/src/server.ts",
+    "start": "npx tsc && ts-node-dev /home/alexandre/Workspace/betventure/backend/src/server.ts",
     "database:reset": "npx tsc && npx sequelize-cli db:drop && npx sequelize-cli db:create && npx sequelize-cli db:migrate && npx sequelize-cli db:seed:all"
   },
   "jest": {
