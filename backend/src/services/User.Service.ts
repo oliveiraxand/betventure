@@ -47,6 +47,33 @@ class UserService {
         return { status: 500, data: { message: error }}
     }
   }
+
+  public async deposito(id:string, quantity: string) {
+    const user = await this.getById(id);
+    if(user)
+    {
+      const balance = user.dataValues.balance += Number(quantity);
+      await this.model.update({balance}, {where: {id}})
+      return { status: 200, data: { message: 'Depósito realizado com sucesso' }}
+    }
+    return { status: 404, data: { message: 'Usuário não encontrado'} }
+  }
+  
+  public async saque(id:string, quantity: string) {
+    const user = await this.getById(id);
+    if(user)
+    {
+      if(user.dataValues.balance > Number(quantity)) 
+      {
+        const balance = user.dataValues.balance -= Number(quantity);
+        await this.model.update({balance}, {where: {id}})
+        return { status: 200, data: { message: 'Saque realizado com sucesso' }}
+      }
+      return { status: 403, data: { message: 'Saldo insuficiente' } }
+    }
+    return { status: 404, data: { message: 'Usuário não encontrado'} }
+  }
+
 }
 
 export default UserService;
