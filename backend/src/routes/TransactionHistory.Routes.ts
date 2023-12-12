@@ -14,4 +14,6 @@ transactionHistoryRouter.put("/:id", transactionHistoryController.updateTransact
 
 transactionHistoryRouter.delete("/:id", transactionHistoryController.deleteTransactionHistory);
 
+transactionHistoryRouter.get("/history/:userId", transactionHistoryController.getByUser);
+
 export default transactionHistoryRouter;

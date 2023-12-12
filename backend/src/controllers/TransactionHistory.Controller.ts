@@ -12,6 +12,7 @@ export default class TransactionHistoryController {
     this.createTransactionHistory = this.createTransactionHistory.bind(this);
     this.updateTransactionHistory = this.updateTransactionHistory.bind(this);
     this.deleteTransactionHistory = this.deleteTransactionHistory.bind(this);
+    this.getByUser = this.getByUser.bind(this);
   }
 
   public async getAllTransactionHistorys(_req: Request, res: Response) {
@@ -42,5 +43,11 @@ export default class TransactionHistoryController {
     const { id } = req.params;
     const serviceResponse = await this._service.deleteTransactionHistory(id);
     return res.status(serviceResponse.status)
+  }
+
+  public async getByUser(req: Request, res:Response) {
+    const { userId } = req.params;
+    const serviceResponse = await this._service.getByUser(userId);
+    return res.status(serviceResponse.status).json(serviceResponse.data);
   }
 }

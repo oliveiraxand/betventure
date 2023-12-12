@@ -25,6 +25,11 @@ class TransactionHistoryService {
     await this.model.destroy({ where: { id: Number( id) }})
     return { status: 204 }
   }
+
+  public async getByUser(userId: string) {
+    const transactions = await this.model.findAll({ where: { userId } });
+    return { status: 200, data: { transactions }}
+  }
 }
 
 export default TransactionHistoryService;
