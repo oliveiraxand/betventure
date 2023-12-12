@@ -1,4 +1,4 @@
-import express, { Request, Response } from 'express';
+import express from 'express';
 import BetController from '../controllers/Bet.Controller';
 
 const betRouter = express.Router();
@@ -13,5 +13,7 @@ betRouter.post("/create", betController.createBet);
 betRouter.put("/:id", betController.updateBet);
 
 betRouter.delete("/:id", betController.deleteBet);
+
+betRouter.get("/history/:userId", betController.getBetByUser);
 
 export default betRouter;

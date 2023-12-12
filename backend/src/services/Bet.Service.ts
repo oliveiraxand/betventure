@@ -12,22 +12,29 @@ export default class BetService {
   }
 
   public async postBet(
-      user_id:string,
-      event_id: string,
-      selection: string,
-      stake: string,
-      odds: string,
-      status: string
-    ) {
-    const insert = await this.model.create({ 
-      userId: Number(user_id), 
-      eventId: Number(event_id),
-      selection,
-      stake: Number(stake),
-      status 
-    });
-    return { status: 201, data: { message:  'Criado com sucesso', data: insert.dataValues }}
-  }
+    user_id: string,
+    event_id: string,
+    selection: string,
+    stake: string,
+    status: string
+) {
+    try {
+        const insert = await this.model.create({
+            userId: Number(user_id),
+            eventId: Number(event_id),
+            selection,
+            stake: Number(stake),
+            status,
+        });
+        return {
+            status: 201,
+            data: { message: 'Criado com sucesso', data: insert.dataValues },
+        };
+    } catch (error) {
+        console.error('Erro ao criar aposta:', error);
+        return { status: 500, data: { message: 'Erro interno do servidor' } };
+    }
+}
 
   public async updateBet(
       id: string,
@@ -35,7 +42,6 @@ export default class BetService {
       event_id: string,
       selection: string,
       stake: string,
-      odds: string,
       status: string
   ) {
     await this.model.update({ userId: Number(user_id), 
@@ -48,7 +54,6 @@ export default class BetService {
       eventId: Number(event_id),
       selection,
       stake,
-      odds: Number(odds), 
       status
     } }}
   }
@@ -56,5 +61,10 @@ export default class BetService {
   public async deleteBet(id: string) {
     await this.model.destroy({ where: { id: Number( id) }})
     return { status: 204 }
+  }
+
+  public async getBetByUser(userId: string) {
+    const bets = await this.model.findAll({where: { userId }})
+    return { status: 200, data: { bets }}
   }
 }

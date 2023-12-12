@@ -1,4 +1,4 @@
-import express, { Request, Response } from 'express';
+import express from 'express';
 import OddsController from '../controllers/Odds.Controller';
 
 const oddsRouter = express.Router();

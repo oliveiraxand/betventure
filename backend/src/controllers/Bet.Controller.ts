@@ -12,6 +12,7 @@ export default class BetController {
     this.createBet = this.createBet.bind(this);
     this.updateBet = this.updateBet.bind(this);
     this.deleteBet = this.deleteBet.bind(this);
+    this.getBetByUser = this.getBetByUser.bind(this);
   }
 
   public async getAllBets(_req: Request, res: Response) {
@@ -25,17 +26,17 @@ export default class BetController {
     return res.status(200).json({ bet: serviceResponse });
   }
   public async createBet(req: Request, res: Response) {
-    const { userId, eventId, selection, status, stake, odds } = req.body;
+    const { userId, eventId, selection, status, stake } = req.body;
     const serviceResponse = await this._service
-      .postBet(userId, eventId, selection, status, stake, odds);
+      .postBet(userId, eventId, selection, stake, status);
     return res.status(serviceResponse.status).json(serviceResponse.data);
   }
 
   public async updateBet(req: Request, res: Response) {
-    const { userId, eventId, selection, status, stake, odds } = req.body;
+    const { userId, eventId, selection, status, stake } = req.body;
     const { id } = req.params;
     const serviceResponse = await this._service
-      .updateBet(id, userId, eventId, selection, stake, odds, status);
+      .updateBet(id, userId, eventId, selection, stake, status);
     return res.status(serviceResponse.status).json(serviceResponse.data);
   }
 
@@ -43,5 +44,11 @@ export default class BetController {
     const { id } = req.params;
     const serviceResponse = await this._service.deleteBet(id);
     return res.status(serviceResponse.status)
+  }
+
+  public async getBetByUser(req: Request, res: Response) {
+    const { userId } = req.params;
+    const serviceResponse = await this._service.getBetByUser(userId);
+    return res.status(serviceResponse.status).json(serviceResponse.data);
   }
 }

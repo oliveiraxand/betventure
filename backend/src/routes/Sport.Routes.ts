@@ -4,7 +4,7 @@ import SportController from '../controllers/Sport.Controller';
 const sportRouter = express.Router();
 const sportController = new SportController();
 
-sportRouter.get("/get-all", sportController.getAllSports);
+sportRouter.get("/", sportController.getAllSports);
 
 sportRouter.get("/:id", sportController.getById);
 
