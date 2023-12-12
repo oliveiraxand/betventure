@@ -30,22 +30,14 @@ class UserService {
     return { status: 204 }
   }
 
-  public async login(username: string, password: string) {
-    try {
-      const user = await this.model.findOne({ where: { username } })
+  public async login(username: string, _password: string) {
+    const user = await this.model.findOne({ where: { username } })
       if(user) {
         const { id } = user.dataValues;
-        const token = this.token.generateToken(id.toString(), username)
-        if(user.dataValues.password === password) {
-          return { status: 200, data: { token } }
-        }
-        return { status: 401, data: { message: 'Login ou senha inválidos' }}
-      } else {
-        return { status: 404, data: { message: 'Usuário não encontrado' }}
+        const token = this.token.generateToken(id.toString(), username);
+        return { status: 200, data: { token }};
       }
-    } catch(error) {
-        return { status: 500, data: { message: error }}
-    }
+      return { status: 404, data: { message: 'Usuário não encontrado' } };
   }
 
   public async deposito(id:string, quantity: string) {

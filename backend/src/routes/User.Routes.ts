@@ -1,7 +1,7 @@
 import express from 'express';
 import UserController from '../controllers/User.Controller';
 import { authenticateToken } from '../middlewares/AuthMiddleware';
-import { verifyUser } from '../middlewares/UserMiddleware';
+import { verifyUser, verifyLogin } from '../middlewares/UserMiddleware';
 const userRouter = express.Router();
 const userController = new UserController();
 
@@ -11,7 +11,7 @@ userRouter.get("/:id", verifyUser, userController.getById);
 
 userRouter.post("/create", userController.createUser);
 
-userRouter.post("/login", userController.login);
+userRouter.post("/login", verifyLogin, userController.login);
 
 userRouter.put("/:id", verifyUser, userController.updateUser);
 
