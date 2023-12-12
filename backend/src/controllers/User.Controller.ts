@@ -19,13 +19,13 @@ class UserController {
 
   public async getAllUsers(_req: Request, res: Response) {
     const serviceResponse = await this._service.getAllUsers();
-    return res.status(200).json({ sports: serviceResponse });
+    return res.status(200).json({ users: serviceResponse });
   }
 
   public async getById(req: Request, res: Response) {
     const { id } = req.params;
     const serviceResponse = await this._service.getById(id);
-    return res.status(200).json({ sport: serviceResponse });
+    return res.status(200).json({ user: serviceResponse });
   }
 
   public async createUser(req: Request, res: Response) {

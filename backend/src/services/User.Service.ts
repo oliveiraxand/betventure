@@ -1,10 +1,13 @@
 import UserModel from "../models/UserModel";
 import Token from "../utils/token";
+import TransactionHistoryService from "./TransactionHistory.Service";
 
 class UserService {
   private token: Token;
+  private transactions: TransactionHistoryService;
   constructor(private model = UserModel) {
     this.token = new Token();
+    this.transactions = new TransactionHistoryService();
   }
   public async getAllUsers(): Promise<UserModel[]> {
     const users = await this.model.findAll();
@@ -46,6 +49,8 @@ class UserService {
     {
       const balance = user.dataValues.balance += Number(quantity);
       await this.model.update({balance}, {where: {id}})
+      const now = Math.floor(new Date().getTime() / 1000)
+      this.transactions.postTransactionHistory(id, 'DEPÓSITO', quantity, now.toString());
       return { status: 200, data: { message: 'Depósito realizado com sucesso' }}
     }
     return { status: 404, data: { message: 'Usuário não encontrado'} }
@@ -59,6 +64,8 @@ class UserService {
       {
         const balance = user.dataValues.balance -= Number(quantity);
         await this.model.update({balance}, {where: {id}})
+        const now = Math.floor(new Date().getTime() / 1000)
+        this.transactions.postTransactionHistory(id, 'SAQUE', quantity, now.toString());
         return { status: 200, data: { message: 'Saque realizado com sucesso' }}
       }
       return { status: 403, data: { message: 'Saldo insuficiente' } }
