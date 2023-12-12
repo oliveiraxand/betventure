@@ -1,22 +1,23 @@
 import express from 'express';
 import UserController from '../controllers/User.Controller';
 import { authenticateToken } from '../middlewares/AuthMiddleware';
+import { verifyUser } from '../middlewares/UserMiddleware';
 const userRouter = express.Router();
 const userController = new UserController();
 
 userRouter.get("/get-all", authenticateToken, userController.getAllUsers);
 
-userRouter.get("/:id", userController.getById);
+userRouter.get("/:id", verifyUser, userController.getById);
 
 userRouter.post("/create", userController.createUser);
 
 userRouter.post("/login", userController.login);
 
-userRouter.put("/:id", userController.updateUser);
+userRouter.put("/:id", verifyUser, userController.updateUser);
 
-userRouter.delete("/:id", userController.deleteUser);
+userRouter.delete("/:id", verifyUser, userController.deleteUser);
 
-userRouter.post("/:id/saque", userController.saque);
+userRouter.post("/:id/saque", verifyUser, userController.saque);
 
-userRouter.post("/:id/deposito", userController.deposito);
+userRouter.post("/:id/deposito", verifyUser, userController.deposito);
 export default userRouter;
