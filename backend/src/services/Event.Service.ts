@@ -1,4 +1,5 @@
 import { Op } from "sequelize";
+import { format } from "date-fns";
 import EventModel from "../models/EventModel";
 import OddsModel from "../models/OddsModel";
 
@@ -13,7 +14,9 @@ class EventService {
     return await this.model.findByPk(id);
   }
 
-  public async postEvent(name: string, date: string, sportId: string) {
+  public async postEvent(name: string, _date: string, sportId: string) {
+    const dataAtual = Date.now();
+    const date = format(dataAtual, 'yyyy/MM/dd');
     const insert = await this.model.create({ name, date, sportId: Number(sportId) })
     return { status: 201, data: { message: 'Criado com sucesso', data: insert.dataValues } }
   }
