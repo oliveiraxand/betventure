@@ -1,5 +1,6 @@
 import express from 'express';
 import EventController from '../controllers/Event.Controller';
+import { verifyEvent } from '../middlewares/EventMiddleware';
 
 const eventRouter = express.Router();
 const eventController = new EventController();
@@ -12,10 +13,10 @@ eventRouter.post("/create", eventController.createEvent);
 
 eventRouter.get("/future", eventController.future);
 
-eventRouter.get("/:id", eventController.getById);
+eventRouter.get("/:id", verifyEvent, eventController.getById);
 
-eventRouter.put("/:id", eventController.updateEvent);
+eventRouter.put("/:id", verifyEvent, eventController.updateEvent);
 
-eventRouter.delete("/:id", eventController.deleteEvent);
+eventRouter.delete("/:id", verifyEvent, eventController.deleteEvent);
 
 export default eventRouter;
