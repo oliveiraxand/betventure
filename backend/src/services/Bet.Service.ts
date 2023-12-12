@@ -16,7 +16,7 @@ export default class BetService {
     event_id: string,
     selection: string,
     stake: string,
-    status: string
+    _status: string
 ) {
     try {
         const insert = await this.model.create({
@@ -24,7 +24,7 @@ export default class BetService {
             eventId: Number(event_id),
             selection,
             stake: Number(stake),
-            status,
+            status: "ativo",
         });
         return {
             status: 201,
@@ -66,5 +66,10 @@ export default class BetService {
   public async getBetByUser(userId: string) {
     const bets = await this.model.findAll({where: { userId }})
     return { status: 200, data: { bets }}
+  }
+
+  public async finish(id: string) {
+    await this.model.update({ status: 'encerrado' }, { where: { id } } )
+    return { status: 200, data: { message: 'Aposta encerrada' } };
   }
 }

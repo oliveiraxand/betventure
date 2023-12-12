@@ -13,6 +13,7 @@ export default class BetController {
     this.updateBet = this.updateBet.bind(this);
     this.deleteBet = this.deleteBet.bind(this);
     this.getBetByUser = this.getBetByUser.bind(this);
+    this.finish = this.finish.bind(this);
   }
 
   public async getAllBets(_req: Request, res: Response) {
@@ -49,6 +50,12 @@ export default class BetController {
   public async getBetByUser(req: Request, res: Response) {
     const { userId } = req.params;
     const serviceResponse = await this._service.getBetByUser(userId);
+    return res.status(serviceResponse.status).json(serviceResponse.data);
+  }
+
+  public async finish(req: Request, res: Response) {
+    const { id } = req.params;
+    const serviceResponse = await this._service.finish(id);
     return res.status(serviceResponse.status).json(serviceResponse.data);
   }
 }
