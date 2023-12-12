@@ -28,8 +28,8 @@ class EventController {
   }
 
   public async createEvent(req: Request, res: Response) {
-    const { name, date, sportId } = req.body;
-    const serviceResponse = await this._service.postEvent(name, date, sportId);
+    const { name, sportId } = req.body;
+    const serviceResponse = await this._service.postEvent(name, sportId);
     return res.status(serviceResponse.status).json(serviceResponse.data);
   }
 

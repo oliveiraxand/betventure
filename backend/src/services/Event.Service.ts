@@ -14,7 +14,7 @@ class EventService {
     return await this.model.findByPk(id);
   }
 
-  public async postEvent(name: string, _date: string, sportId: string) {
+  public async postEvent(name: string, sportId: string) {
     const dataAtual = Date.now();
     const date = format(dataAtual, 'yyyy/MM/dd');
     const insert = await this.model.create({ name, date, sportId: Number(sportId) })
