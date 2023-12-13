@@ -3,4 +3,6 @@ export type Event = {
     sportId: number,
     name: string,
     date: string,
+    teamHomeId: number,
+    teamAwayId: number
 }
