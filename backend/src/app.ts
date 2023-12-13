@@ -6,6 +6,7 @@ import sportRouter from "./routes/Sport.Routes";
 import oddsRouter from "./routes/Odds.Routes";
 import userRouter from "./routes/User.Routes";
 import transactionHistoryRouter from "./routes/TransactionHistory.Routes";
+import teamRouter from "./routes/Team.Routes";
 
 const app = express();
 app.use(express.json());
@@ -20,5 +21,6 @@ app.use("/sports", sportRouter)
 app.use("/odds", oddsRouter);
 app.use("/users", userRouter);
 app.use("/transaction", transactionHistoryRouter);
+app.use("/teams", teamRouter);
 
 export default app;

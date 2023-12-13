@@ -14,16 +14,20 @@ class EventService {
     return await this.model.findByPk(id);
   }
 
-  public async postEvent(name: string, sportId: string) {
+  public async postEvent(name: string, sportId: string, teamHomeId: string, teamAwayId: string) {
     const dataAtual = Date.now();
     const date = format(dataAtual, 'yyyy/MM/dd');
-    const insert = await this.model.create({ name, date, sportId: Number(sportId) })
+    const insert = await this.model.create({ 
+      name, date, sportId: Number(sportId), 
+      teamAwayId: Number(teamAwayId), 
+      teamHomeId: Number(teamHomeId) });
     return { status: 201, data: { message: 'Criado com sucesso', data: insert.dataValues } }
   }
 
-  public async updateEvent(id: string, name: string, date: string, sportId: string) {
-    await this.model.update({ name, date, sportId: Number(sportId) }, { where: { id: Number(id) } })
-    return { status: 200, data: { message: 'Atualizado com sucesso', data: { id, name, date, sportId } } }
+  public async updateEvent(id: string, name: string, date: string, sportId: string, teamHomeId: string, teamAwayId: string) {
+    await this.model.update({ name, date, sportId: Number(sportId), 
+      teamAwayId: Number(teamAwayId), teamHomeId: Number(teamHomeId) }, { where: { id: Number(id) } })
+    return { status: 200, data: { message: 'Atualizado com sucesso', data: { id, name, date, sportId, teamHomeId, teamAwayId } } }
   }
 
   public async deleteEvent(id: string) {
