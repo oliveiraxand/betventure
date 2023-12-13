@@ -28,15 +28,15 @@ class EventController {
   }
 
   public async createEvent(req: Request, res: Response) {
-    const { name, sportId } = req.body;
-    const serviceResponse = await this._service.postEvent(name, sportId);
+    const { name, sportId, teamHomeId, teamAwayId } = req.body;
+    const serviceResponse = await this._service.postEvent(name, sportId, teamHomeId, teamAwayId);
     return res.status(serviceResponse.status).json(serviceResponse.data);
   }
 
   public async updateEvent(req: Request, res: Response) {
-    const { name, date, sportId } = req.body;
+    const { name, date, sportId, teamHomeId, teamAwayId } = req.body;
     const { id } = req.params;
-    const serviceResponse = await this._service.updateEvent(id, name, date, sportId);
+    const serviceResponse = await this._service.updateEvent(id, name, date, sportId, teamHomeId, teamAwayId);
     return res.status(serviceResponse.status).json(serviceResponse.data);
   }
 

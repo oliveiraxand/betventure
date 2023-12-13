@@ -9,7 +9,7 @@ sportRouter.get("/", sportController.getAllSports);
 
 sportRouter.get("/:id", verifySport, sportController.getById);
 
-sportRouter.post("/create", sportController.createSport);
+sportRouter.post("/", sportController.createSport);
 
 sportRouter.put("/:id", verifySport, sportController.updateSport);
 

@@ -5,11 +5,11 @@ import { verifyEvent } from '../middlewares/EventMiddleware';
 const oddsRouter = express.Router();
 const oddsController = new OddsController();
 
-oddsRouter.get("/get-all", oddsController.getAllOdds);
+oddsRouter.get("/", oddsController.getAllOdds);
 
 oddsRouter.get("/:eventId", verifyEvent, oddsController.getById);
 
-oddsRouter.post("/create", oddsController.createOdds);
+oddsRouter.post("/", oddsController.createOdds);
 
 oddsRouter.put("/:eventId", verifyEvent, oddsController.updateOdds);
 

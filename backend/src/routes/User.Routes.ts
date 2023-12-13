@@ -5,11 +5,11 @@ import { verifyUser, verifyLogin } from '../middlewares/UserMiddleware';
 const userRouter = express.Router();
 const userController = new UserController();
 
-userRouter.get("/get-all", authenticateToken, userController.getAllUsers);
+userRouter.get("/", authenticateToken, userController.getAllUsers);
 
 userRouter.get("/:id", verifyUser, userController.getById);
 
-userRouter.post("/create", userController.createUser);
+userRouter.post("/", userController.createUser);
 
 userRouter.post("/login", verifyLogin, userController.login);
 

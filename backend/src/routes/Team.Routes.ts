@@ -9,7 +9,7 @@ teamRouter.get("/", teamController.getAllTeams);
 
 teamRouter.get("/:id", verifyTeam, teamController.getById);
 
-teamRouter.post("/create", teamController.createTeam);
+teamRouter.post("/", teamController.createTeam);
 
 teamRouter.put("/:id", verifyTeam, teamController.updateTeam);
 

@@ -16,13 +16,13 @@ class TeamController {
 
   public async getAllTeams(_req: Request, res: Response) {
     const serviceResponse = await this._service.getAllTeams();
-    return res.status(200).json({ sports: serviceResponse });
+    return res.status(200).json({ teams: serviceResponse });
   }
 
   public async getById(req: Request, res: Response) {
     const { id } = req.params;
     const serviceResponse = await this._service.getById(id);
-    return res.status(200).json({ sport: serviceResponse });
+    return res.status(200).json({ team: serviceResponse });
   }
 
   public async createTeam(req: Request, res: Response) {

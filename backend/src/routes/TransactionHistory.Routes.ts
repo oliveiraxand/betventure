@@ -4,11 +4,11 @@ import TransactionHistoryController from '../controllers/TransactionHistory.Cont
 const transactionHistoryRouter = express.Router();
 const transactionHistoryController = new TransactionHistoryController();
 
-transactionHistoryRouter.get("/get-all", transactionHistoryController.getAllTransactionHistorys);
+transactionHistoryRouter.get("/", transactionHistoryController.getAllTransactionHistorys);
 
 transactionHistoryRouter.get("/:id", transactionHistoryController.getById);
 
-transactionHistoryRouter.post("/create", transactionHistoryController.createTransactionHistory);
+transactionHistoryRouter.post("/", transactionHistoryController.createTransactionHistory);
 
 transactionHistoryRouter.put("/:id", transactionHistoryController.updateTransactionHistory);
 
