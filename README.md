@@ -67,8 +67,8 @@ Certifique-se de ter o Docker instalado em sua máquina.
 1. Clone o repositório:
 
    ```bash
-   git clone https://github.com/seu-usuario/seu-projeto.git
-   cd seu-projeto
+   git clone git@github.com:oliveiraxand/betventure.git
+   cd betventure
    ```
 2. Crie e inicie os contêineres Docker usando o Docker Compose:
 
