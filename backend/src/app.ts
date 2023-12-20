@@ -11,8 +11,6 @@ import teamRouter from "./routes/Team.Routes";
 const app = express();
 app.use(express.json());
 
-// Middlewares, configurações, etc.
-
 // Rotas
 app.use("/auth", authRouter);
 app.use("/events", eventRouter);

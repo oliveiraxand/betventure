@@ -10,12 +10,12 @@ export default {
       },
       {
         id: 2, 
-        name: 'Dogders',
-        sport_id: 1
+        name: 'São Paulo',
+        sport_id: 2
       },
       {
         id: 3, 
-        name: 'Migué',
+        name: 'França',
         sport_id: 1
       },
     ])

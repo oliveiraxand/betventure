@@ -4,9 +4,11 @@
     "migrate": "npx tsc && npx sequelize-cli db:migrate",
     "seed": "npx tsc && npx sequelize-cli db:seed:all",
     "test:mocha": "npm run test:mocha --prefix backend",
-    "test:jest": "jest /home/alexandre/Workspace/betventure/backend/tests",
-    "start": "npx tsc && ts-node-dev /home/alexandre/Workspace/betventure/backend/src/server.ts",
-    "database:reset": "npx tsc && npx sequelize-cli db:drop && npx sequelize-cli db:create && npx sequelize-cli db:migrate && npx sequelize-cli db:seed:all"
+    "test:jest": "jest backend/tests",
+    "start": "npx tsc && ts-node-dev /app-backend/src/server.ts",
+    "start:docker": "nodemon /app-backend/build/src/server.js",
+    "database:reset": "npx tsc && npx sequelize-cli db:drop && npx sequelize-cli db:create && npx sequelize-cli db:migrate && npx sequelize-cli db:seed:all",
+    "database:create": "npx tsc && npx sequelize-cli db:create && npx sequelize-cli db:migrate && npx sequelize-cli db:seed:all"
   },
   "jest": {
     "preset": "ts-jest",
@@ -17,7 +19,10 @@
     "@types/jsonwebtoken": "^9.0.5",
     "date-fns": "^2.30.0",
     "express": "^4.18.2",
+    "mysql2": "^3.6.5",
+    "nodemon": "^3.0.2",
     "sequelize": "^6.35.1",
+    "sequelize-cli": "^6.6.2",
     "typescript": "^5.3.3"
   },
   "devDependencies": {
