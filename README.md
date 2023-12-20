@@ -124,13 +124,8 @@ Certifique-se de ter o Docker instalado em sua máquina.
 1. Clone o repositório:
 
    ```bash
-<<<<<<< Updated upstream
    git clone git@github.com:oliveiraxand/betventure.git
    cd betventure
-=======
-   git clone https://github.com/seu-usuario/seu-projeto.git
-   cd seu-projeto
->>>>>>> Stashed changes
    ```
 2. Crie e inicie os contêineres Docker usando o Docker Compose:
 
@@ -143,13 +138,6 @@ Acesse a API em http://localhost:PORTA (substitua PORTA pela porta configurada e
 
 ## Tecnologias Utilizadas
 
-TypeScript<br> 
-Sequelize<br> 
-Node.js<br>
-EXPRESS<br> 
-MOCHA<br>
-SINON<br>
-CHAI<br>
 TypeScript<br> 
 Sequelize<br> 
 Node.js<br>
